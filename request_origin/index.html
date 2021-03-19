@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function getData() {
+        let xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("load", () => {
+          console.log("Data received!");
+          console.log(xhr.response);
+        });
+
+        xhr.responseType = "json";
+        xhr.open("GET", "http://localhost:9292/api/domains");
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
