@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Space Design | Team</title>
+    <style>
+      /*
+----------------------------------------
+Tantek Celik's Whitespace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of browsers to a common base
+----------------------------------------
+*/
+
+ul, ol { list-style: none; }
+h1, h2, h3, h4, h5, h6, pre, code { font-size: 1em; }
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote,
+fieldset, input, dl, dt, dd, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+a img, :link img, :visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main {
+  display: block;
+}
+mark {
+  color: inherit;
+  background-color: transparent;
+}
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* General layout, fonts etc. */
+
+body {
+  background: #2f2840 url("images/bg_body.gif");
+  background-position-x: 160px;
+  font: 100 20px 'Avenir LT Std', 'Nunito Sans', Helvetica, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+header {
+  height: 570px;
+  padding-top: 132px;
+}
+
+main {
+  background-color: white;
+  padding: 114px 80px 25px 80px;
+  width: 100%;
+}
+
+h1,
+h2,
+nav a,
+footer p {
+  font-family: "Avenir Ltd 65 Medium", "Nunito Sans", Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+nav {
+  margin-left: -5px;
+}
+
+h1 {
+  margin-bottom: 28px;
+  font-size: 36px;
+}
+
+h2 {
+  margin-bottom: 8px;
+  color: #3e59b2;
+  font-size: 1.5rem;
+}
+p {
+  padding: 0 20%;
+  margin: 0 0 58px 0;
+  line-height: 1.8rem;
+}
+
+/* Navigation */
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  padding-top: 115px;
+  width: 100%;
+}
+
+nav ul li { flex: 0 0 11rem; }
+
+nav > ul > li > a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #cacaca;
+  text-decoration: none;
+  letter-spacing: 0.03rem;
+}
+
+nav > ul > li.active a {
+  font-weight: 900;
+  color: #6db9ff;
+}
+
+/* Modal */
+.modal-overlay {
+  background-color: rgba(1, 1, 1, 20%);
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+}
+.visible {
+  visibility: visible;
+  height: 1;
+}
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+.modal-inner {
+  display: flex;
+  height: 50%;
+  width: 80%;
+  background-color: white;
+  padding-top: 50px;
+  overflow: auto;
+  position: relative;
+}
+#close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* Footer */
+
+footer {
+  background-color: #e7e7e7;
+  min-height: 300px;
+  padding: 88px 0 75px 0;
+  color: #b2b2b2;
+}
+
+footer img {
+  flex: 0 0 50px;
+  height: 50px;
+  width: 50px;
+}
+
+footer ul {
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  width: 680px;
+}
+
+footer p {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Sprite images for Social Media */
+a.sm-link {
+  width: 46px;
+  height: 46px;
+  background: url("images/icons_social-media.png") no-repeat;
+  display: inline-block;
+}
+
+footer li { flex: 1; }
+
+footer li:nth-child(2) a { background-position: 0 -46px; }
+
+footer li:nth-child(3) a { background-position: 0 -92px; }
+
+footer li:nth-child(4) a { background-position: 0 -138px; }
+
+
+/* Specific page properties */
+
+#projects figure {
+  padding: 0 0 55px 0;
+}
+
+#projects figure img {
+  display: block;
+  margin: 0 auto;
+}
+
+#team p {
+  padding: 0 120px 120px 120px;
+}
+
+#team ul {
+  padding: 0 0 225px 0;
+}
+
+#team li {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 24px;
+}
+
+#team li a {
+  text-decoration: none;
+  color: #3e59b2;
+}
+
+#team li img {
+  display: block;
+  margin: 0 0 25px 0;
+}
+    </style>
+  </head>
+  <body>
+    <div class="modal-overlay invisible">
+      <div class="modal-inner invisible">
+        <img src="./images/icon_close.png" id="close-button" alt="">
+        <img src="#" id="team-img" alt="">
+        <p id="team-bio">
+        </p>
+      </div>
+    </div>
+    <header>
+      <img src="images/logo.png" alt="logo" />
+
+      <nav>
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          <li class="active"><a href="team.html">TEAM</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="team">
+
+        <h1>&bull;&nbsp; Team &nbsp;&bull;</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniadolor.</p>
+        
+        <ul>
+          <li><a href="#"><img data-bio="Some info for Kevin" src="images/img_kevin.jpg" alt="Kevin">Kevin</a></li>
+          <li><a href="#"><img data-bio="Some info for Louis" src="images/img_louis.jpg" alt="Louis">Louis</a></li>
+          <li><a href="#"><img data-bio="Some info for Kasper" src="images/img_kasper.jpg" alt="Kasper">Kasper</a></li>
+        <li><a href="#"><img data-bio="Some info for Chris" src="images/img_chris.jpg" alt="Chris">Chris</a></li>
+      </ul>
+      
+    </div>
+    </main>
+    
+    <footer>
+      <p>
+        Lorem ipsum dolor sit amet, consectetu <br />incididunt ut labore et dolore
+        magna aliqua. Ut enim ad
+      </p>
+      
+      <ul>
+        <li><a href="#" class="sm-link"> </a></li>
+        <li><a href="#" class="sm-link"> </a></li>
+        <li><a href="#" class="sm-link"> </a></li>
+        <li><a href="#" class="sm-link"> </a></li>
+      </ul>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", (e) => {
+      const closeButton = document.getElementById('close-button');
+      const teamButton = document.getElementById('close-button');
+      const modalOverlay = document.querySelector('.modal-overlay');
+      const modalInner = document.querySelector('.modal-inner');
+      const modalImg = document.getElementById('team-img');
+      const modalText = document.getElementById('team-bio');
+      const teamMembers = document.querySelectorAll('main div#team ul li');
+
+      [...teamMembers].forEach(member => {
+        member.addEventListener("click", (e) => {
+          const imgUrl = e.currentTarget.querySelector("img").src;
+          const bioText = e.currentTarget.querySelector("img").getAttribute("data-bio");
+          modalImg.src = imgUrl;
+          modalText.textContent = bioText;
+          openModal();
+        })
+      });
+      closeButton.addEventListener("click", (e) => {
+        modalOverlay.classList.add('invisible');
+        modalOverlay.classList.toggle('visible');
+        modalInner.classList.add('invisible');
+        modalInner.classList.toggle('visible');
+      })
+
+      function openModal() {
+        modalOverlay.classList.add('visible');
+        modalOverlay.classList.toggle('invisible');
+        modalInner.classList.add('visible');
+        modalInner.classList.toggle('invisible');
+      }
+    })
+  </script>
+</html>
